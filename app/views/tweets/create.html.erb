@@ -1,0 +1,11 @@
+<h1>You messed up</h1>
+
+<ul>
+
+	<% @tweet.errors.full_messages.each do |error| %>
+	<li><%= error %></li>
+
+
+	<%end%>
+
+</ul>

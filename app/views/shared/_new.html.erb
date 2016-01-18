@@ -1,0 +1,5 @@
+<%= form_for(new_tweet) do |f| %>
+	<%= f.label :content, "Tweet goes here"%>
+	<%= f.text_field :content, :autofocus=>true %>
+	<%= f.submit "Tweet!" %>
+<% end %>
