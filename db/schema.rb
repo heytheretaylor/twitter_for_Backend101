@@ -11,7 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113012145) do
+ActiveRecord::Schema.define(version: 20160120011834) do
+
+  create_table "attendances", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "session_id"
+    t.integer  "user_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "tagline"
+    t.integer  "user_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+
+  create_table "sessions", force: :cascade do |t|
+    t.datetime "date_of"
+    t.integer  "whiskey"
+    t.integer  "user_turn"
+    t.integer  "attendance"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "session_id"
+  end
 
   create_table "tweets", force: :cascade do |t|
     t.integer  "user_id"
@@ -38,5 +66,18 @@ ActiveRecord::Schema.define(version: 20160113012145) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "whiskeys", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "rating"
+    t.integer  "times"
+    t.string   "upc"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
 
 end

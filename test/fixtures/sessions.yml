@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_of: 2016-01-18 01:54:47
+  whiskey: 1
+  user_turn: 1
+  attendance: 1
+
+two:
+  date_of: 2016-01-18 01:54:47
+  whiskey: 1
+  user_turn: 1
+  attendance: 1

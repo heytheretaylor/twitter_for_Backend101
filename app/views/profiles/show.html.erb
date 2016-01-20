@@ -1,0 +1,9 @@
+<h1><%= @profile.user.handle %></h1>
+
+<%= image_tag @profile.avatar.url(:medium) %>
+
+<%= form_for @profile, :html => { :multipart => true, :id => "myform" } do |f| %>
+  <%= f.text_field :tagline %>
+  <%= f.file_field :avatar %>
+  <%= f.submit "Change!!" %>
+<% end %>

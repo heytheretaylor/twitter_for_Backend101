@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="">
+ 
+<p>How do you feel about?:</p>
+<p>Animals! : <input type="text" ng-model="animals" placeholder="Enter name here"></p>
+<p>Plants! : <input type="text" ng-model="plants" placeholder="Enter name here"></p>
+
+<ul>
+<%	@my_hash['animals'].each do |animal| %>
+	<% if animal["isAnimal"] %>
+	<b><li>{{animals}} <%= animal["animalName"]<< "s" %></li></b>
+	<% else %>
+	<li>{{plants}} <%= animal["animalName"] << "s" %></li>
+	<%end%>
+	<%end%>
+</ul>
+
+
+
+</div>
+
+</body>
+</html>

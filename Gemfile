@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'devise'
 
+gem "paperclip", "~> 4.2"
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -45,5 +47,12 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+#VISUALIZER FOR RAILS(EXPERIMENTAL)
+
+group :development do
+  gem "rails-erd"
+end
+
 end
 

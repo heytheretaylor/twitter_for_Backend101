@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  resources :profiles
+
+
+  resources :whiskeys
+  resources :sessions
   resources :tweets
   devise_for :users
   # get 'home/index'

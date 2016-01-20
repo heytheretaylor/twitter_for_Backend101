@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
          has_many :tweets
+         has_many :sessions, :through => :attendances
+         has_many :attendances
+         has_one :profile
 end
